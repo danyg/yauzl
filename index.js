@@ -614,6 +614,7 @@ Entry.prototype.getLastModDate = function(options) {
         var posixTimestamp = data.readInt32LE(1);
         return new Date(posixTimestamp * 1000);
       } else if (extraField.id === 0x000a) {
+        // NTFS
         var data = extraField.data;
         // 4 bytes reserved
         var cursor = 4;
